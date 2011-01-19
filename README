@@ -1,0 +1,20 @@
+Update builder 
+============================
+
+Graham Markall, 19 Jan 2011.
+
+See License.txt for license.
+
+----------------------------
+
+This is a very simple set of scripts and a Makefile that I use to build an update.zip from my AOSP build. It may not be the best way to do things, but it works for me at the moment. If you intend to use it yourself, you need to set the following environment variables:
+
+ANDROID_PRODUCT_OUT: The location of the output of your build for the device, e.g. out/target/product/bravo
+ANDROID_HOST_OUT: The location of the build host code, e.g. out/host-linux-x86
+ANDROID_KERNEL: The location of the (built) kernel sources
+ANDROID_KEY_DIR: The folder containing your keys to sign the update.zip, called certificate.pem and key.pk8
+
+There are a couple of gotchas:
+
+* It makes an amend script rather than an edify one, so the update.zip will only work with older versions of Clockworkmod
+* The kernel parameters are suitable for an HTC desire. They may need modifying.
